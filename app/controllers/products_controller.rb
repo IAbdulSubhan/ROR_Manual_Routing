@@ -43,7 +43,7 @@ class ProductsController < ApplicationController
 
   private
 
-  def product_params
+  def product_params      #strong parameters(security purpose to submit selected data into database like here title,desc, price is allowed), without it if someone get knowledge how your software is working he can send extra attributes also there
     params.require(:product).permit(:title, :description, :price)
   end
 end
